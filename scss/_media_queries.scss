@@ -12,6 +12,7 @@
  *********************************** */
 
 /* ************************************
+/* ************************************
  *
  * Device Width 
  * Initialize variables
@@ -40,15 +41,15 @@ $MQ_MODERN_TABLET_LANDSCAPE     :  1024px !default; // new iPad: 2,048 resolutio
 $MQ_MODERN_TABLET_PXRATIO       :     1.5 !default; // iOS: 2.0
 
 //Desctop device sizes
-$MQ_DESCTOP_NARROW              :  1024px !default;
-$MQ_DESCTOP_MODERN              :  1280px !default;
-$MQ_DESCTOP_WIDE                :  1600px !default;
-$MQ_DESCTOP_HD                  :  1920px !default;
-$MQ_MODERN_DESCTOP_PXRATIO      :     1.0 !default;
+$MQ_DESKTOP_NARROW              :  1024px !default;
+$MQ_DESKTOP_MODERN              :  1280px !default;
+$MQ_DESKTOP_WIDE                :  1600px !default;
+$MQ_DESKTOP_HD                  :  1920px !default;
+$MQ_MODERN_DESKTOP_PXRATIO      :     1.0 !default;
 
-$MQ_FUTURE_DESCTOP_MODERN       :  1280px !default; //13inch MacBookPro Retina 2560
-$MQ_FUTURE_DESCTOP_WIDE         :  1440px !default; //15inch MacBookPro Retina 2880
-$MQ_FUTURE_DESCTOP_PXRATIO      :     1.5 !default; // MacOS: 2.0
+$MQ_FUTURE_DESKTOP_MODERN       :  1280px !default; //13inch MacBookPro Retina 2560
+$MQ_FUTURE_DESKTOP_WIDE         :  1440px !default; //15inch MacBookPro Retina 2880
+$MQ_FUTURE_DESKTOP_PXRATIO      :     1.5 !default; // MacOS: 2.0
 
 
 /* ************************************
@@ -518,39 +519,39 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
  * ratio  : 2.0
  *
  *********************************** */
-@mixin mq-desctop ( $size: narrow, $version: modern ) {
+@mixin mq-desktop ( $size: narrow, $version: modern ) {
         @if $version == modern {
                 @if $size == narrow {
                         @media only screen
                         and ( min-width: $MQ_OLD_TABLET_LANDSCAPE )
-                        and ( max-width: $MQ_DESCTOP_NARROW )
+                        and ( max-width: $MQ_DESKTOP_NARROW )
                         {
                                 @content;
                         }
                 } @else if $size == modern {
                         @media only screen
-                        and ( min-width: $MQ_DESCTOP_NARROW + 1 )
-                        and ( max-width: $MQ_DESCTOP_MODERN )
+                        and ( min-width: $MQ_DESKTOP_NARROW + 1 )
+                        and ( max-width: $MQ_DESKTOP_MODERN )
                         {
                                 @content;
                         }
                 } @else if $size == wide {
                         @media only screen
-                        and ( min-width: $MQ_DESCTOP_MODERN + 1 )
-                        and ( max-width: $MQ_DESCTOP_WIDE )
+                        and ( min-width: $MQ_DESKTOP_MODERN + 1 )
+                        and ( max-width: $MQ_DESKTOP_WIDE )
                         {
                                 @content;
                         }
                 } @else if $size == hd {
                         @media only screen
-                        and ( min-width: $MQ_DESCTOP_WIDE + 1 )
-                        and ( max-width: $MQ_DESCTOP_HD )
+                        and ( min-width: $MQ_DESKTOP_WIDE + 1 )
+                        and ( max-width: $MQ_DESKTOP_HD )
                         {
                                 @content;
                         }
                 } @else if $size == over {
                         @media only screen
-                        and ( min-width: $MQ_DESCTOP_HD + 1 )
+                        and ( min-width: $MQ_DESKTOP_HD + 1 )
                         {
                                 @content;
                         }
@@ -560,17 +561,17 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
                 {
                         @if $size == modern {
                                 @media only screen
-                                and ( min-width: $MQ_DESCTOP_NARROW + 1 )
-                                and ( max-width: $MQ_FUTURE_DESCTOP_MODERN )
-                                and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_FUTURE_DESCTOP_PXRATIO ) )
+                                and ( min-width: $MQ_DESKTOP_NARROW + 1 )
+                                and ( max-width: $MQ_FUTURE_DESKTOP_MODERN )
+                                and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_FUTURE_DESKTOP_PXRATIO ) )
                                 {
                                         @content;
                                 }
                         } @else if $size == wide {
                                 @media only screen
-                                and ( min-width: $MQ_FUTURE_DESCTOP_MODERN + 1 )
-                                and ( max-width: $MQ_FUTURE_DESCTOP_WIDE )
-                                and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_FUTURE_DESCTOP_PXRATIO ) )
+                                and ( min-width: $MQ_FUTURE_DESKTOP_MODERN + 1 )
+                                and ( max-width: $MQ_FUTURE_DESKTOP_WIDE )
+                                and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_FUTURE_DESKTOP_PXRATIO ) )
                                 {
                                         @content;
                                 }
@@ -580,34 +581,34 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
                 @if $size == narrow {
                         @media only screen
                         and ( min-width: $MQ_OLD_TABLET_LANDSCAPE )
-                        and ( max-width: $MQ_DESCTOP_NARROW )
+                        and ( max-width: $MQ_DESKTOP_NARROW )
                         {
                                 @content;
                         }
                 } @else if $size == modern {
                         @media only screen
-                        and ( min-width: $MQ_DESCTOP_NARROW + 1 )
-                        and ( max-width: $MQ_DESCTOP_MODERN )
+                        and ( min-width: $MQ_DESKTOP_NARROW + 1 )
+                        and ( max-width: $MQ_DESKTOP_MODERN )
                         {
                                 @content;
                         }
                 } @else if $size == wide {
                         @media only screen
-                        and ( min-width: $MQ_DESCTOP_MODERN + 1 )
-                        and ( max-width: $MQ_DESCTOP_WIDE )
+                        and ( min-width: $MQ_DESKTOP_MODERN + 1 )
+                        and ( max-width: $MQ_DESKTOP_WIDE )
                         {
                                 @content;
                         }
                 } @else if $size == hd {
                         @media only screen
-                        and ( min-width: $MQ_DESCTOP_WIDE + 1 )
-                        and ( max-width: $MQ_DESCTOP_HD )
+                        and ( min-width: $MQ_DESKTOP_WIDE + 1 )
+                        and ( max-width: $MQ_DESKTOP_HD )
                         {
                                 @content;
                         }
                 } @else if $size == over {
                         @media only screen
-                        and ( min-width: $MQ_DESCTOP_HD + 1 )
+                        and ( min-width: $MQ_DESKTOP_HD + 1 )
                         {
                                 @content;
                         }
@@ -616,17 +617,17 @@ $MQ_PREFIX_TYPES                : -webkit-, -moz-, -o-, -ms-, '' !default;
                 {
                         @if $size == modern {
                                 @media only screen
-                                and ( min-width: $MQ_DESCTOP_NARROW + 1 )
-                                and ( max-width: $MQ_FUTURE_DESCTOP_MODERN )
-                                and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_FUTURE_DESCTOP_PXRATIO ) )
+                                and ( min-width: $MQ_DESKTOP_NARROW + 1 )
+                                and ( max-width: $MQ_FUTURE_DESKTOP_MODERN )
+                                and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_FUTURE_DESKTOP_PXRATIO ) )
                                 {
                                         @content;
                                 }
                         } @else if $size == wide {
                                 @media only screen
-                                and ( min-width: $MQ_FUTURE_DESCTOP_MODERN + 1 )
-                                and ( max-width: $MQ_FUTURE_DESCTOP_WIDE )
-                                and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_FUTURE_DESCTOP_PXRATIO ) )
+                                and ( min-width: $MQ_FUTURE_DESKTOP_MODERN + 1 )
+                                and ( max-width: $MQ_FUTURE_DESKTOP_WIDE )
+                                and ( #{$prefix}min-device-pixel-ratio: set_temp_pxratio( $prefix, $MQ_FUTURE_DESKTOP_PXRATIO ) )
                                 {
                                         @content;
                                 }

@@ -80,37 +80,37 @@ html
                         content         : 'tablet landscape modern';
                 }
         }
-        @include mq-desctop('modern') {
+        @include mq-desktop('modern') {
                 background      : #aaa;
 
                 &:after
                 {
-                        content         : 'desctop modern';
+                        content         : 'desktop modern';
                 }
         }
-        @include mq-desctop('wide') {
+        @include mq-desktop('wide') {
                 background      : #ccc;
 
                 &:after
                 {
-                        content         : 'desctop wide';
+                        content         : 'desktop wide';
                 }
         }
-        @include mq-desctop('hd') {
+        @include mq-desktop('hd') {
                 background      : #eee;
 
                 &:after
                 {
-                        content         : 'desctop hd';
+                        content         : 'desktop hd';
                 }
         }
-        @include mq-desctop('over') {
+        @include mq-desktop('over') {
                 background      : #cc0000;
 
                 &:after
                 {
                         color           : #fff;
-                        content         : 'desctop over';
+                        content         : 'desktop over';
                 }
         }
         @include mq-custom( 300px, 600px ) {
